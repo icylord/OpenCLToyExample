@@ -108,8 +108,8 @@ main(void)
         queue.enqueueNDRangeKernel(
             kernel, 
             cl::NullRange, 
-            cl::NDRange(MATRIX_DIM, MATRIX_DIM),
-                cl::NDRange(WORK_GROUP, WORK_GROUP));
+            cl::NDRange(WORK_GROUP, WORK_GROUP),
+                cl::NullRange);
 
         // Map cBuffer to host pointer. This enforces a sync with 
         // the host backing space, remember we choose GPU device.
